@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mrBin</title>
+<style>
+body {
+background-color : #5F9EA0;
+}
+div {
+border: 1px solid #333;
+box-shadow: 8px 5px 8px;
+heigth : 30px;
+width  : 50px;
+backgroung-color : #F7F8A0;
+}
+.color1 {
+background-color : #DC143C;
+}
+
+.color2 {
+background-color : #2F4F4F;
+}
+.hidden {
+display : none;
+}
+
+table {
+border-collapse: collapse;
+border : 1 px solid grey;
+}
+
+td {
+padding: 10px 20px;
+border : 1px solid grey;
+background-color : #F0F8FF;
+}
+
+</style>
+
+</head>
+
+<body>
+<input>
+
+<ul>
+<li>doh</li>
+<li>arr</li>
+<li>mmm</li>
+<li>heh</li>
+<li>tss</li>
+<li>brr</li>
+<li>wow</li>
+</ul>
+
+
+<script>
+let inp = document.querySelector('input');
+let ul = document.querySelector('ul');
+let li = document.querySelectorAll('li');
+li.forEach(el=> el.style.display = 'none');
+
+let arrLi = [];
+for (let i = 0; i < li.length; i++) {
+arrLi.push(li[i].innerHTML);
+}
+
+inp.addEventListener('input',()=> {
+let inpVal = inp.value;
+ let arr = inpVal.split(' ');
+    for (let el of arr) {
+    for (let e of arrLi) {
+    if (el != e) {
+    console.log(undefined);
+    } else {
+    let a = arrLi.indexOf(e);
+        li[a].style.display = 'block';
+            }}}});
+</script>
+</body>
+</html>
